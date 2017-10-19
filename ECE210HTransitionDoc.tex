@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+
+%packages
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[tocflat]{tocstyle}
+\usetocstyle{standard}
+
+\usepackage{blindtext}
+
+% Redefinition of ToC command to get centered heading
+\makeatletter
+\renewcommand\tableofcontents{%
+  \null\hfill\textbf{\Large\contentsname}\hfill\null\par
+  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+  \@starttoc{toc}%
+}
+\makeatother
+
+
+\newcommand{\RevisionHistoryItem}[3]{
+    \item {
+        Author: \textbf{#1}, \ \ \  Date: \textbf{#2}
+    } \\
+    Notes: #3
+}
+
+\title{ECE210 Honors Transition Document}
+\author{Kaidong Peng}
+\date{October 2017}
+
+% ----------------- Document starts here ---------------------
+
+\begin{document}
+
+% Front Page
+\null  % Empty line
+\nointerlineskip  % No skip for prev line
+\vfill
+\let\snewpage \newpage
+\let\newpage \relax
+\maketitle
+\let \newpage \snewpage
+\vfill
+\newpage
+
+% table of contents. default behavior overriden by toc
+\tableofcontents
+\newpage
+
+% Revision History. Any modifications on the Transition Docs made by 
+% after-comers should be documented here following the format below
+\section{Revision History}
+    \begin{itemize}
+        \RevisionHistoryItem{Kaidong Peng}{Oct. 19th, 2017}
+        {Init}
+    \end{itemize}
+\newpage
+
+% Overview
+\section{Overview}
+    Welcome! This is a placeholder for Overview.
+\newpage
+
+
+\section{Course Preparation}
+    Placeholder for this section.
+    \subsection{Room Reservation}
+        Some room reservation stuff
+    \subsection{Software Requests}
+        Some software request content
+\newpage
+
+
+   First document. This is a simple example, with no 
+   extra parameters or packages included.
+\end{document}
