@@ -21,7 +21,7 @@
 }
 \makeatother
 
-
+% for revision history item formatting
 \newcommand{\RevisionHistoryItem}[3]{
     \item {
         Author: \textbf{#1}, \ \ \  Date: \textbf{#2}
@@ -29,9 +29,17 @@
     Notes: #3
 }
 
+% for list of abbreviations item formatting
+\newcommand{\AbbreviationItem}[2]{
+    \item {
+        \textbf{#1}: \ \ \ {#2}
+    } 
+}
+
+
 \title{ECE210 Honors Transition Document}
-\author{Kaidong Peng}
-\date{October 2017}
+\author{Kaidong Peng} % please append your name here if you have made edits to this document
+\date{Last Modified: October 2017} % update this when you make edits
 
 % ----------------- Document starts here ---------------------
 \begin{document}
@@ -56,14 +64,44 @@
 \section*{Revision History}
 \addcontentsline{toc}{section}{Revision History}
     \begin{itemize}
-        \RevisionHistoryItem{Kaidong Peng}{Oct. 19th, 2017}
+        \RevisionHistoryItem{Kaidong Peng}{October, 2017}
         {Init}
+        \RevisionHistoryItem{Kaidong Peng}{December, 2017}
+        {First Draft, add sections \textbf{\textit{Suggestions for Future Improvement}} and \textbf{\textit{List of Abbreviations}}, improve document styling}
     \end{itemize}
+
+\newpage
+
+% this is the place to define handy abbreviations to make this document more concise.
+\section*{List of Abbreviations}
+\addcontentsline{toc}{section}{List of Abbreviations}
+    \begin{itemize}
+        \AbbreviationItem{ECE}{Electrical and Computer Engineering}
+        \AbbreviationItem{ECEB}{Electrical and Computer Engineering Building}
+        \AbbreviationItem{DCL}{Digital Computer Laboratory}
+        \AbbreviationItem{EH}{Engineering Hall}
+        \AbbreviationItem{EWS}{Engineering Work Station}
+        \AbbreviationItem{TA}{Teaching Assistant}
+    \end{itemize}
+
 \newpage
 
 % Overview
 \section{Overview}
-    Welcome! This is a placeholder for Overview.
+    Welcome! If you are reading this document, you have probably been appointed as the next TA to run ECE210 Honors. As the name suggests, this is a transition document written for you to provide useful information and to help you get up to speed.
+
+    This document was initiated by Kaidong Peng, a Spring 2018 graduate who was in charge of ECE210 Honors from Spring 2016 to Fall 2017. When Kaidong took over this job from his predecessor, he had encountered many difficulties familarizing himself with various administrative tasks. As a result, he spent a lot of time and efforts figuring out these tasks, which in his opinion could totally be avoided if there is a properly written guideline or transition document for him to refer to. Fortunately, his predecessor stayed at University of Illinois for graduate study and thus he was able to get a lot of help. Nevertheless, he felt the need of a properly written transition document and was therefore motivated to creat this transition document to help his successors.
+
+    As you probably know, ECE210 Honors is achieved by the collective efforts of previous ECE students: the idea of this class originated from a student and the class is entirely run by students as well. According to Professor Erhan Kudeki, who is the course director of ECE210 and the deparment associate head for undergraduate affairs by the time Kaidong created this document, some students came to ask Professor Kudeki if there is a clas they could learn useful scientific computation tools from. Remember this happened in the good old days when ECE210 Honors does not exist. I don't know what was exactly Professor Kudeki\rq s answer to them, but later another student came to him and volunteered to run a session to teach students MATLAB. Professor Kudeki supported him and this is how ECE210 Honors started.
+
+    Initially ECE210 Honors only taught students MATLAB, but later with the increasing popularity of Python and possibly with Professor Kudeki\rq s enthusiasm to Python as well, Jupyter (previously known as iPython) was added into to the syllabus. Keep in mind that the goal of this class is to teach students useful scientific computation tools and basic digital signal processing, so feel free to add new things you consider helpful and remove things you consider outdated. That being said, if one day MATLAB becomes completely unpopular or extremely expensive that even EWS machines no longer offer them, you should consider removing those MATLAB content and add other useful things into this class. For instance, if there is a new emerging language or tool, say MightyKitten (I made it up), you should seriously consider adding it into the syllabus if it is highly useful and beneficial to students.
+
+    Okay, so what do you need to know in order to become a successful TA for ECE210 Honors? First thing first: you have to have a great understanding in the tools you are about to teach. This is obvious: if you are struggling with MATLAB and Python yourself, and you are trying to teach others on how to use them and use them well, students will have no confidence in you and you probably won\rq t be a very good TA. An excellent understanding in signal processing is also very critical: you want to teach students not only the correct way to do things but the correct way to think as well.
+    
+    But these are not the end of story. Besides these technical knowledge and understanding, you need to know various administrative procedures, such as room reservation, software requests, registration logistics, grades reporting, and much more to run this class by yourself. And yes, you need to come up with a good course flow to optmize students\rq \
+     learning experience. This sounds like a very daunting task, isn\rq t it? No worries, I\rq ve got you covered. Again, this is exactly why this document is here for you to read before you set out to teach ECE210 Honors in the upcoming semester. After reading through this document, you should have enough knowledge necessary to organize and run this class smoothly. In turn, I ask you a favor to make improvements to this document in future when you have learned something new: anything you add will help your successors significantly, and I am pretty sure they will greatly appreciate your contributions.
+
+    Now fasten your seat belt. Let\rq s get to know the different aspects of this job one by one in great details.
 \newpage
 
 \section{Special Accomodations}
@@ -75,9 +113,13 @@
 \section{Course Preparation}
     Placeholder for this section.
     \subsection{Room Reservation}
-        Some room reservation stuff
+        Room reservation sounds like a very easy task, but ocassionally it can be frustrating as well. As ECE210 Honors is not listed as an offical course, it does not have a offically designated time and location. Therefore, we should aim for time slots that best fit students\rq s schedule to encourage more students to enroll. However, once we have narrowed down to a specific time schedule, sometimes there are few spots available at those times due to time conflicts with discussion sessions of other courses such as ECE220, ECE314, and ECE398. Thus, my suggestion to you is to consider both time and location together when you try to determine the schedule for the upcoming semester.
+
+        Typically this class is conducted in EWS labs, such as ECE2022 and DCL416. These labs have linux machines, which have MATLAB and Jupyter already pre-installed. During Fall 2017, when Kaidong Peng was trying to reserve a time slot among these Linux EWS labs, he had trouble finding one for the reason described above. Thus, he had to look into Windows EWS labs. Through some efforts, he managed to have anaconda installed on all the Windows EWS machines in Engineering Hall 416b1. Anaconda allows students to use Jupyter easily on Windows, and after doing so ECE210 Honors can be conducted in Engineering Hall 416b1 as well. The takeaway is that both Linux and Windows EWS labs are good for ECE210 Honors, but you might have to do some extra work if you choose to have class in Windows EWS labs.
+
+        Now let me give you a very detailed guideline on how to make reservations at ECEB, DCL, or EH. ECEB has its own online reservation system, which can be accessed here via this link: PLACEHOLDER . All you need to do is to log in using your own NetID credentials, and select an available time slot. Make sure you select reoccurent to be the reservation type, and you should be ready to go. For other EWS labs, first check the calendar here to find availabilities. Then access this request form via this link PLACEHOLDER to submit your room reservation request to Engineering IT. The request form is self-explanatory and you should be able to figure out the rest on your own.
     \subsection{Software Request}
-        Some software request content
+        Currently for ECE210 Honors, MATLAB and Jupyter are required for 
     \subsection{Student Registration}
 \newpage
 
@@ -88,6 +130,11 @@
 \newpage
 
 \section{Grades Reporting}
+    As the semester comes to an end around reading day,In the end of the class, 
+\newpage
+
+\section{Suggestions for Future Improvement}
+
 \newpage
 
 \section{Transition and Recruitment}
